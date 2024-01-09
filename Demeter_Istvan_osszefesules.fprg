@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="demeter.istvan.tamas"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-03 10:51:59 de."/>
+        <attribute name="created" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDM7MDk6NTI6NTUgZGUuOzQxMTk="/>
+        <attribute name="edited" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDM7MTA6NTE6NTkgZGUuOzE7NDIyMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="&#214;sszef&#233;s&#252;l&#233;s&#13;&#10;&#13;&#10;K&#233;t rendezett t&#246;mb un&#243;j&#225;t szeretn&#233;m megkapni, &#233;s az uni&#243;k&#233;pz&#233;s ut&#225;n szeretn&#233;m megtartani a rendezetts&#233;get."/>
+            <declare name="n, m" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <input variable="m"/>
+            <declare name="i, j, k" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="j" expression="0"/>
+            <assign variable="k" expression="-1"/>
+            <declare name="a" type="Integer" array="True" size="n"/>
+            <declare name="b" type="Integer" array="True" size="m"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="a[i]"/>
+            </for>
+            <for variable="j" start="0" end="m-1" direction="inc" step="1">
+                <input variable="b[j]"/>
+            </for>
+            <declare name="c" type="Integer" array="True" size="n+m"/>
+            <assign variable="i" expression="0"/>
+            <assign variable="j" expression="0"/>
+            <while expression="i&lt; n &amp;&amp; j&lt;m">
+                <assign variable="k" expression="k+1"/>
+                <comment text="fesules"/>
+                <if expression="a[i]&lt;b[j]">
+                    <then>
+                        <assign variable="c[k]" expression="a[i]"/>
+                        <assign variable="i" expression="i+1"/>
+                    </then>
+                    <else>
+                        <if expression="a[i] = b[j]">
+                            <then>
+                                <assign variable="c[k]" expression="a[i]"/>
+                                <assign variable="i" expression="i+1"/>
+                                <assign variable="j" expression="j+1"/>
+                            </then>
+                            <else>
+                                <if expression="a[i]&gt; b[j]">
+                                    <then>
+                                        <assign variable="c[k]" expression="b[j]"/>
+                                        <assign variable="j" expression="j+1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <comment text="tombok feltoltese"/>
+            <while expression="i &lt; n">
+                <assign variable="k" expression="k+1"/>
+                <assign variable="c[k]" expression="a[i]"/>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <while expression="j &lt; m">
+                <assign variable="k" expression="k+1"/>
+                <assign variable="c[k]" expression="b[j]"/>
+                <assign variable="j" expression="j+1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

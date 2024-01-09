@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="demeter.istvan.tamas"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-03 09:41:11 de."/>
+        <attribute name="created" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDM7MDk6MjI6NDggZGUuOzQxMTg="/>
+        <attribute name="edited" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDM7MDk6NDE6MTEgZGUuOzE7NDIxNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Kiv&#225;laszt&#225;s&#13;&#10;&#13;&#10;Az adott elem a t&#246;mb h&#225;nyadik hely&#233;n van. (Tudjuk, hogy tartalmazza!)"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="tomb" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="tomb[i]"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

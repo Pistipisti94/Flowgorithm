@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="demeter.istvan.tamas"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-09 11:51:41 de."/>
+        <attribute name="created" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDk7MTE6MTc6MjkgZGUuOzQxMjA="/>
+        <attribute name="edited" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDk7MTE6NTE6NDEgZGUuOzE7NDIyMA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="[...] rendez&#337; algoritmus "/>
+            <comment text="V&#225;ltoz&#243;k l&#233;trehoz&#225;sa"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;A t&#246;mb hossza:&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="T" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <declare name="tmp" type="Integer" array="False" size=""/>
+            <comment text="T&#246;mb felt&#246;lt&#233;se"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="i+1&amp;&quot;. sz&#225;m&quot;" newline="True"/>
+                <input variable="T[i]"/>
+            </for>
+            <comment text="T&#246;mb ki&#237;rat&#225;sa"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="T[i]&amp;&quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

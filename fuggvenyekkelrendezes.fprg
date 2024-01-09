@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="demeter.istvan.tamas"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-09 11:16:20 de."/>
+        <attribute name="created" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDk7MTA6MjY6NDIgZGUuOzQxMTQ="/>
+        <attribute name="edited" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDk7MTE6MDk6NDYgZGUuOzc7ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDk7MDg6NTA6MDkgZGUuO2J1Ym9yZWsuZnByZzs5Njk2"/>
+        <attribute name="edited" value="ZGVtZXRlci5pc3R2YW4udGFtYXM7QlVSRy0xRTA1LTE4OzIwMjQtMDEtMDk7MTE6MTY6MjAgZGUuOzE7NDIxOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Kiv&#225;laszt&#225;sos rendez&#233;s"/>
+            <comment text="Deklar&#225;l&#225;s"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <declare name="temp" type="Integer" array="False" size=""/>
+            <output expression="&quot;K&#233;rem az elemek sz&#225;m&#225;t&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="T" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <comment text="T&#246;mb l&#233;trehoz&#225;sa&#13;&#10;"/>
+            <call expression="tomb(n)"/>
+            <comment text="Rendez&#233;s"/>
+            <call expression="rendez(n)"/>
+        </body>
+    </function>
+    <function name="rendez" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <declare name="temp" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="T" type="Integer" array="True" size="n"/>
+            <for variable="k" start="0" end="n-2" direction="inc" step="1">
+                <for variable="i" start="0" end="n-2-k" direction="inc" step="1">
+                    <if expression="T[i]&gt;T[i+1]">
+                        <then>
+                            <assign variable="temp" expression="T[i]"/>
+                            <assign variable="T[i]" expression="T[i+1]"/>
+                            <assign variable="T[i+1]" expression="temp"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </for>
+            <output expression="&quot;Rendezett adatok&quot;" newline="True"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="T[i]&amp;&quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+    <function name="tomb" type="Integer" variable="T">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="T" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;K&#233;rem a(z) &quot;&amp;i+1&amp;&quot;. Elemet&quot;" newline="True"/>
+                <input variable="T[i]"/>
+            </for>
+            <output expression="&quot;Rendezetlen adatok&quot;" newline="True"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="T[i]&amp;&quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
